@@ -1,0 +1,57 @@
+# Queries
+
+query GetList {
+  getList {
+    id
+    name
+    content
+    active
+  }
+}
+
+query GetItem($id: ID) {
+  getItem(id: $id) {
+    id
+    name
+    content
+    active
+  }
+}
+
+# Mutations
+
+mutation AddItem($name: String, $content: String, $active: Boolean) {
+  addItem(name: $name, content: $content, active: $active) {
+    id
+    name
+    content
+    active
+  }
+}
+
+mutation UpdateItem($id: ID, $name: String, $content: String, $active: Boolean) {
+  updateItem(id: $id, name: $name, content: $content, active: $active) {
+    id
+    name
+    content
+    active
+  }
+}
+
+mutation RemoveItem($id: ID) {
+  removeItem(id: $id) {
+    id
+    name
+    content
+    active
+  }
+}
+
+# Variables
+
+# {
+#   "id": 1,
+#   "name": "name",
+#   "content": "content",
+#   "active": true
+# }

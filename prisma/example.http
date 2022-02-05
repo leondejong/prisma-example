@@ -1,0 +1,6 @@
+http http://127.0.0.1:3000
+http http://127.0.0.1:3000/list
+http http://127.0.0.1:3000/item/1
+http post http://127.0.0.1:3000/item name=name content=content active:=true
+http put http://127.0.0.1:3000/item/1 name=name content=content active:=true
+http delete http://127.0.0.1:3000/item/1
