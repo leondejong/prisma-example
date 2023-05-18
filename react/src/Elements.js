@@ -1,20 +1,19 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
 const input = css`
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: rgba(63, 63, 63, 1);
+  border-radius: 0.25rem;
+  background: rgba(47, 51, 55, 1);
   color: rgba(255, 255, 255, 1);
   font-weight: 700;
+  border: none;
+  outline: none;
   &:hover,
   &:focus,
   &:active {
-    border: none;
-    outline: none;
-    background: rgba(95, 95, 95, 1);
+    background: rgba(63, 67, 71, 1);
   }
-`
+`;
 
 const Button = styled.button`
   ${input}
@@ -25,11 +24,11 @@ const Button = styled.button`
   &:active {
     background: rgba(0, 191, 255, 1);
   }
-`
+`;
 
 const InputText = styled.input`
   ${input}
   width: calc(100% - 2rem);
-`
+`;
 
-export { input, Button, InputText }
+export { input, Button, InputText };

@@ -5,6 +5,7 @@ query GetList {
     id
     name
     content
+    link
     active
   }
 }
@@ -14,26 +15,46 @@ query GetItem($id: ID) {
     id
     name
     content
+    link
     active
   }
 }
 
 # Mutations
 
-mutation AddItem($name: String, $content: String, $active: Boolean) {
-  addItem(name: $name, content: $content, active: $active) {
+mutation AddItem(
+  $name: String
+  $content: String
+  $link: String
+  $active: Boolean
+) {
+  addItem(name: $name, content: $content, link: $link, active: $active) {
     id
     name
     content
+    link
     active
   }
 }
 
-mutation UpdateItem($id: ID, $name: String, $content: String, $active: Boolean) {
-  updateItem(id: $id, name: $name, content: $content, active: $active) {
+mutation UpdateItem(
+  $id: ID
+  $name: String
+  $content: String
+  $link: String
+  $active: Boolean
+) {
+  updateItem(
+    id: $id
+    name: $name
+    content: $content
+    link: $link
+    active: $active
+  ) {
     id
     name
     content
+    link
     active
   }
 }
@@ -43,6 +64,7 @@ mutation RemoveItem($id: ID) {
     id
     name
     content
+    link
     active
   }
 }
@@ -53,5 +75,6 @@ mutation RemoveItem($id: ID) {
 #   "id": 1,
 #   "name": "name",
 #   "content": "content",
+#   "link": "link",
 #   "active": true
 # }

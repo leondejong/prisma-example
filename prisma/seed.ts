@@ -1,39 +1,47 @@
-import { PrismaClient, Prisma } from '@prisma/client'
+import { PrismaClient, Prisma } from "@prisma/client";
 
-const prisma = new PrismaClient()
+const prisma = new PrismaClient();
 
 const items: Prisma.ItemCreateInput[] = [
   {
-    name: 'name1',
-    content: 'content1',
-    active: true
+    name: "Name 1",
+    content: "Content 1",
+    link: "Link 1",
+    active: true,
   },
   {
-    name: 'name2',
-    content: 'content2',
-    active: true
+    name: "Name 2",
+    content: "Content 2",
+    link: "Link 2",
+    active: true,
   },
   {
-    name: 'name3',
-    content: 'content3',
-    active: true
-  }
-]
+    name: "Name 3",
+    content: "Content 3",
+    link: "Link 3",
+    active: true,
+  },
+];
 
-async function main () {
+async function main() {
+  const list = [];
   for (const item of items) {
     const entry = await prisma.item.create({
-      data: item
-    })
-    console.log(`Created user with id: ${entry.id}`)
+      data: item,
+    });
+    list.push(entry);
   }
+  return list;
 }
 
 main()
-  .catch(error => {
-    console.error(error)
-    process.exit(1)
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((error) => {
+    console.error(error);
   })
   .finally(async () => {
-    await prisma.$disconnect()
-  })
+    await prisma.$disconnect();
+    process.exit(1);
+  });

@@ -1,20 +1,20 @@
-import styled from 'styled-components'
-import List from './List'
+import styled from "styled-components";
+
+import List from "./List";
 
 const Main = styled.main`
-  position: absolute;
-  left: 50%;
-  width: 60rem;
-  min-height: 100%;
-  transform: translateX(-50%);
-`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-family: Avenir, Lato, sans-serif;
+`;
 
-function App () {
+function App() {
   return (
     <Main>
       <List />
     </Main>
-  )
+  );
 }
 
-export default App
+export default App;
