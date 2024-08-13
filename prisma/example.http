@@ -1,0 +1,7 @@
+http http://127.0.0.1:3333
+http http://127.0.0.1:3333/list
+http http://127.0.0.1:3333/item/1
+http post http://127.0.0.1:3333/item name=name content=content link=link active:=true
+http put http://127.0.0.1:3333/item/1 name=name content=content link=link active:=true
+http patch http://127.0.0.1:3333/item/1 name=name content=content link=link active:=true
+http delete http://127.0.0.1:3333/item/1

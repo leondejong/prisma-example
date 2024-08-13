@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  // Create `.env` file in the root directory with content: `DATABASE_URL="file:./development.db"`
+  // url      = env("DATABASE_URL")
+  url      = "file:./development.db"
+}
+
+model Item {
+  id      Int      @id @default(autoincrement())
+  created DateTime @default(now())
+  updated DateTime @updatedAt
+  active  Boolean  @default(false)
+  name    String
+  content String?
+  link    String?
+}
